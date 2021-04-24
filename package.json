@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prisma": "prisma"
+    "prisma": "prisma",
+    "start:db": "docker run --rm --name fastify-prisma-pg -e POSTGRES_PASSWORD=fastify-prisma -p 5432:5432 -v $(pwd)/volumes/postgres:/var/lib/postgresql/data -d postgres",
+    "stop:db": "docker stop fastify-prisma-pg",
+    "psql": "docker exec -it fastify-prisma-pg psql -U postgres"
   },
   "keywords": [],
   "author": "",
