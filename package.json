@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prisma": "prisma",
-    "start:db": "docker run --rm --name fastify-prisma-pg -e POSTGRES_PASSWORD=fastify-prisma -p 5432:5432 -v $(pwd)/volumes/postgres:/var/lib/postgresql/data -d postgres",
+    "start:db": "docker run --rm --name fastify-prisma-pg -e POSTGRES_PASSWORD=password -p 5432:5432 -v $(pwd)/volumes/postgres:/var/lib/postgresql/data -d postgres",
     "stop:db": "docker stop fastify-prisma-pg",
     "psql": "docker exec -it fastify-prisma-pg psql -U postgres"
   },
@@ -13,9 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "2.21.2",
     "esbuild": "^0.11.14",
     "prettier": "^2.2.1",
-    "prisma": "^2.21.2",
+    "prisma": "2.21.2",
     "typescript": "^4.2.4"
   }
 }
