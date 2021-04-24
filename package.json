@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node scripts/dev.js",
+    "repl": "node --experimental-repl-await --loader ts-node/esm scripts/repl.ts",
     "start:db": "docker run --rm --name fastify-prisma-pg -e POSTGRES_PASSWORD=password -p 5432:5432 -v $(pwd)/volumes/postgres:/var/lib/postgresql/data -d postgres",
     "stop:db": "docker stop fastify-prisma-pg",
     "prisma": "prisma",

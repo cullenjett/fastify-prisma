@@ -31,3 +31,7 @@ yarn prisma generate
 - `yarn stop:db`
 
   - Kill the running postgres database Docker container
+
+- `yarn repl`
+
+  - Start a Node repl with the prisma client made available
