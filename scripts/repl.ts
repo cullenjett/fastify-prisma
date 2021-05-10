@@ -1,6 +1,7 @@
 import repl from 'repl';
 
-// TODO: why does this need to be a relative import?
+// This needs to be a relative import because this script is
+// run with ts-node, which does not output actual files
 import { prisma } from '../src/data-sources/prisma';
 
 const runningRepl = repl.start({
