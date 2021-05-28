@@ -3,6 +3,8 @@ const { join } = require('path');
 const { build } = require('esbuild');
 const execa = require('execa');
 
+const packageJson = require('../package.json');
+
 process.env.NODE_ENV = 'development';
 
 const TS_APP_ENTRYPOINT = join(__dirname, '../src/index.ts');
@@ -21,7 +23,7 @@ async function main() {
     format: 'cjs',
     target: ['es2020'],
     bundle: true,
-    external: ['@prisma/client'],
+    external: Object.keys(packageJson.dependencies),
     watch: {
       onRebuild() {
         restart();
